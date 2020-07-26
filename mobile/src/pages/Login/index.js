@@ -1,17 +1,16 @@
 import React from 'react';
-import { View, Text, KeyboardAvoidingView, Image, TouchableOpacity, StyleSheet, Button } from 'react-native';
-import { TextInput } from 'react-native-gesture-handler';
+import { View, Text, KeyboardAvoidingView, Image, TouchableOpacity, StyleSheet, Button, TextInput } from 'react-native';
+//import { TextInput } from 'react-native-gesture-handler';
 
 import logoImage from '../../assets/logo.png';
 
 
 export default function Login() {
     return(
-        
         <KeyboardAvoidingView style={styles.background}>
-        <View>
-            <Image style={styles.image} source={logoImage}/>       
-        </View>  
+            <View>
+                <Image style={styles.image} source={logoImage}/>       
+            </View>  
 
             <View>
                 <TextInput
@@ -20,8 +19,8 @@ export default function Login() {
                     placeholder="Email"
                     autoCorrect={false}
                     placeholderTextColor="gray"    
-                    //returnKeyType = { "next" }
-                    //onSubmitEditing={() => { this.passwordTextInput.focus(); }}
+                    returnKeyType = { "next" }
+                    onSubmitEditing={() => { this.passwordTextInput.focus(); }}
                 />
 
                 <TextInput 
@@ -37,6 +36,7 @@ export default function Login() {
                 <TouchableOpacity style={styles.button}>
                     <Text style={styles.buttonText}>Pronto!</Text>
                 </TouchableOpacity>
+                
                 <Text style={styles.text}>Esqueci minha senha!</Text>
                 
                 <Text style={styles.text}>Ainda não tem conta? <Text style={styles.greenText}>Criar</Text></Text>
