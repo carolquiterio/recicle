@@ -1,12 +1,11 @@
 import React from 'react';
-import {View, Text} from 'react-native';
 
 import {StyledContainer, StyledText} from './styles';
 
-export default function Home(props) {
+export default function Collect() {
   return (
     <StyledContainer>
-      <StyledText>Home</StyledText>
+      <StyledText>Collect</StyledText>
     </StyledContainer>
   );
 }

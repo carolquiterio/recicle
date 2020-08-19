@@ -3,10 +3,10 @@ import {View, Text} from 'react-native';
 
 import {StyledContainer, StyledText} from './styles';
 
-export default function Home(props) {
+export default function Profile() {
   return (
     <StyledContainer>
-      <StyledText>Home</StyledText>
+      <StyledText>Profile</StyledText>
     </StyledContainer>
   );
 }

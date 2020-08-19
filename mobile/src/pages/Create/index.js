@@ -1,4 +1,7 @@
 import React, {useState} from 'react';
+
+import {firebase} from '../../firebase/config';
+
 import {KeyBoardAvoidingView} from 'react-native';
 import {
   StyledTextInput,
@@ -19,7 +22,38 @@ const Create = ({navigation}) => {
     navigation.navigate('Login');
   };
 
-  const handleCreatePress = () => {};
+  const onRegisterPress = () => {
+    console.log('oi');
+    if (password !== confirmPassword) {
+      alert("Passwords don't match.");
+      return;
+    }
+    console.log('oi2');
+    firebase
+      .auth()
+      .createUserWithEmailAndPassword(email, password)
+      .then(response => {
+        const uid = response.user.uid;
+        const data = {
+          id: uid,
+          email,
+          fullName,
+        };
+        const usersRef = firebase.firestore().collection('users');
+        usersRef
+          .doc(uid)
+          .set(data)
+          .then(() => {
+            navigation.navigate('Home', {user: data});
+          })
+          .catch(error => {
+            alert(error);
+          });
+      })
+      .catch(error => {
+        alert(error);
+      });
+  };
 
   return (
     <Container>
