@@ -5,12 +5,7 @@
     <br>
 </h3>
 
-<p align="center">
-  <a>
-  <img alt="License" src="https://img.shields.io/github/license/carolquiterio/">
-</p>
-
-# Índice
+# Index
 
 - [About](#about)
 - [Tecnology](#tecnology)
@@ -43,7 +38,8 @@ The project was developed using the following technologies
 
 <h1 align="center">
     <img alt="Home" src=".github/collect.png" width="300px">
-    <img alt="Tips" src=".github/progress.png" width="300px">
+    <img alt="Tips" src=".github/progress.png" width="300px"> 
+    <br>
     <img alt="Collect" src=".github/tips.png" width="300px">
 </h1>
 
