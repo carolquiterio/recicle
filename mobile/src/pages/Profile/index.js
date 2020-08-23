@@ -2,28 +2,29 @@ import React from 'react';
 import {View, Text, Image} from 'react-native';
 import ImageCarol from '../../assets/carol.jpg';
 
-import {StyledContainer, StyledText, StyledText1, ArvoreContainer, ContainerCarol} from './styles';
+import {
+  Container,
+  ThreeText,
+  NameText,
+  ThreeContainer,
+  ImageContainer,
+  ImageLogo,
+  NumberOfThreesText,
+} from './styles';
 
 export default function Profile() {
   return (
-    <StyledContainer>
-    <View> 
+    <Container>
+      <ImageContainer>
+        <ImageLogo source={ImageCarol} />
+      </ImageContainer>
 
-      <ContainerCarol>
-        <Image source={ImageCarol} />
-      </ContainerCarol>
+      <NameText>@carol_quiterio</NameText>
 
-      <StyledText1>
-        <Text>@Carol_quiterio</Text>
-      </StyledText1>
-
-      <ArvoreContainer>
-        <StyledText>
-          <Text>Você salvou 99 arvores...</Text>
-        </StyledText>  
-      </ArvoreContainer>
-
-      </View>
-    </StyledContainer>
+      <ThreeContainer>
+        <ThreeText>TOTAL DE ÁRVORES SALVAS</ThreeText>
+        <NumberOfThreesText>289</NumberOfThreesText>
+      </ThreeContainer>
+    </Container>
   );
 }

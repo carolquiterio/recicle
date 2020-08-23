@@ -1,54 +1,49 @@
 import styled from 'styled-components/native';
+import {Image} from 'react-native';
 
-export const StyledContainer = styled.View`
+export const Container = styled.View`
   flex: 1;
-  color: #EFEFEF;
+  color: #efefef;
+  padding: 20px;
 `;
 
-export const StyledText = styled.Text`
-  font-size: 20px;
+export const ThreeText = styled.Text`
+  font-size: 21px;
   color: #ffffff;
+  font-weight: 500;
 `;
 
-export const StyledText1 = styled.Text`
+export const NameText = styled.Text`
   font-size: 17px;
-  color: #000000;
-  left: 125px;
-  top: -70px;
+  color: #3d3d4d;
+  align-self: center;
+  margin-bottom: 20px;
+  margin-top: -68px;
 `;
 
-export const LogoContainerMenu = styled.View`
-  height: 100%;
-  width: 60%;
-  align-items:center;
-  transform: scale(0.9);
+export const ImageLogo = styled(Image)`
+  border-radius: 1050px;
+  transform: scale(0.07);
 `;
 
-export const ImageLogo = styled.Image`
-  width: 10%;
-`;
-export const ContainerCarol = styled.View`
+export const ImageContainer = styled.View`
   height: 50%;
   width: 100%;
-  padding: -130px;
   justify-content: center;
   align-items: center;
-  transform: scale(0.2);
-  border-radius: 700px;
 `;
 
-export const ImageCarol = styled.Image`
-  width: 100%; 
-`;
-export const  ArvoreContainer = styled.View`
-  background-color: #34CB79;
-  height:30%;
-  width: 80%;
-  padding-right: 40px;
-  top: -50px;
-  left: 40px;
+export const ThreeContainer = styled.View`
+  height: 20%;
+  width: 100%;
   justify-content: center;
   align-items: center;
-  border-radius: 50px;
+  border-radius: 14px;
+  background-color: #34bc79;
 `;
 
+export const NumberOfThreesText = styled.Text`
+  font-size: 50px;
+  color: #ffffff;
+  font-weight: 900;
+`;
