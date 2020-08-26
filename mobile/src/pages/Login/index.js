@@ -1,13 +1,17 @@
 import React, {useState} from 'react';
+
 import {
-  View,
-  Text,
-  KeyboardAvoidingView,
-  Image,
-  TouchableOpacity,
-  StyleSheet,
-  TextInput,
-} from 'react-native';
+  BackImage,
+  StyledText,
+  ButtonText,
+  StyledInput,
+  Container,
+  ReadyButton,
+  StyledGreenText,
+  InputContainer,
+  CreateAccountContainer,
+  StyledPasswordText,
+} from './styles';
 
 import logoImage from '../../assets/logo.png';
 
@@ -22,15 +26,10 @@ export default function Login({navigation}) {
   const handleLoginPress = () => {};
 
   return (
-    <KeyboardAvoidingView style={styles.background}>
-      <View>
-        <Image style={styles.image} source={logoImage} />
-      </View>
-
-      <View>
-        <TextInput
+    <Container>
+      <InputContainer>
+        <StyledInput
           //value={email}
-          style={styles.input}
           placeholder="Email"
           autoCorrect={false}
           placeholderTextColor="gray"
@@ -40,11 +39,11 @@ export default function Login({navigation}) {
           }}
           onChangeText={text => setEmail(text)}
           value={email}
+          style={shadowStyle}
         />
 
-        <TextInput
+        <StyledInput
           //value={ password }
-          style={styles.input}
           secureTextEntry={true}
           placeholder="Senha"
           placeholderTextColor="gray"
@@ -52,107 +51,39 @@ export default function Login({navigation}) {
           //returnKeyType = { "next" }
           onChangeText={text => setPassword(text)}
           value={password}
+          style={shadowStyle}
         />
 
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => handleLoginPress()}>
-          <Text style={styles.buttonText}>Pronto!</Text>
-        </TouchableOpacity>
+        <ReadyButton onPress={() => handleLoginPress()} style={shadowStyle}>
+          <ButtonText>Pronto!</ButtonText>
+        </ReadyButton>
 
-        <Text style={styles.text}>Esqueci minha senha!</Text>
+        <StyledPasswordText>Esqueci minha senha!</StyledPasswordText>
 
-        <Text style={styles.text}>
-          Ainda não tem conta?
-          <Text style={styles.greenText} onPress={handleCreatePress}>
-            Criar
-          </Text>
-        </Text>
-      </View>
-    </KeyboardAvoidingView>
+        <CreateAccountContainer>
+          <StyledText>
+            Ainda não tem conta?
+            <StyledGreenText onPress={handleCreatePress}>
+              {' '}
+              Criar
+            </StyledGreenText>
+          </StyledText>
+        </CreateAccountContainer>
+      </InputContainer>
+    </Container>
   );
 }
 
-const styles = StyleSheet.create({
-  image: {
-    maxHeight: 200,
-    maxWidth: 450,
-    marginBottom: 50,
-    justifyContent: 'flex-start',
+const shadowStyle = {
+  shadowColor: '#000',
+  shadowOffset: {
+    width: 0,
+    height: 1,
   },
-
-  input: {
-    backgroundColor: '#F5EEF5',
-    borderRadius: 30,
-    paddingLeft: 20,
-    minWidth: 350,
-    marginBottom: 20,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 1,
-    },
-    shadowOpacity: 0.22,
-    shadowRadius: 2.22,
-    elevation: 3,
-    fontFamily: 'Roboto',
-    fontSize: 16,
-  },
-
-  background: {
-    flex: 0,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-
-  button: {
-    borderRadius: 30,
-    backgroundColor: '#0EB161',
-    minWidth: 350,
-    textAlign: 'center',
-    minHeight: 50,
-    alignItems: 'center',
-    fontWeight: '500',
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 1,
-    },
-    shadowOpacity: 0.22,
-    shadowRadius: 2.22,
-    elevation: 3,
-    fontFamily: 'Roboto',
-  },
-
-  buttonText: {
-    color: 'white',
-    paddingTop: 13,
-    textAlign: 'center',
-    fontSize: 16,
-    fontWeight: '500',
-    fontFamily: 'Roboto',
-  },
-
-  text: {
-    fontFamily: 'Roboto',
-    fontStyle: 'normal',
-    fontWeight: '500',
-    fontSize: 18,
-    lineHeight: 21,
-    color: '#757575',
-    alignSelf: 'center',
-    marginTop: 10,
-    marginBottom: 140,
-  },
-
-  greenText: {
-    fontFamily: 'Roboto',
-    fontStyle: 'normal',
-    fontWeight: '500',
-    fontSize: 18,
-    lineHeight: 21,
-    color: '#0EB161',
-    alignSelf: 'center',
-    marginTop: 50,
-  },
-});
+  shadowOpacity: 0.22,
+  shadowRadius: 2.22,
+  elevation: 3,
+};
+/*
+<BackImage source={logoImage} />
+*/

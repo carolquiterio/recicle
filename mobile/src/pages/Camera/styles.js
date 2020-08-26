@@ -10,3 +10,8 @@ export const StyledContainer = styled.View`
 export const StyledText = styled.Text`
   font-size: 20px;
 `;
+
+export const TopMenuContainer = styled.View`
+  align-items: center;
+  justify-content: flex-start;
+`;
