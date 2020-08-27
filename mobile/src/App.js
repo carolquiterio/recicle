@@ -3,7 +3,7 @@ import 'react-native-gesture-handler'; //isso aqui é necessário para usarmos a
 
 import React, {useEffect, useState} from 'react';
 
-import {Button, Text} from 'react-native';
+//import {Button, Text} from 'react-native';
 
 //import Icon from 'react-native-vector-icons/FontAwesome';
 //import MapIcon from 'react-native-vector-icons/FontAwesome';
@@ -22,6 +22,7 @@ import Camera from './pages/Camera';
 import Profile from './pages/Profile';
 
 import Menu from './components/Menu';
+import TabBarMidleButton from './components/TabBarMidleButton';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -63,27 +64,24 @@ export default function App() {
           inactiveTintColor: 'gray',
         }}>
         <Tab.Screen name="Login" component={LoginStackScreen} />
-        <Tab.Screen name="Home" component={Home} />
-        <Tab.Screen name="Camera" component={Camera} />
-        <Tab.Screen name="Collect" component={Collect} />
-        <Tab.Screen name="Profile" component={Profile} />
+        <Tab.Screen name="Home" component={HomeStackScreen} />
+        <Tab.Screen
+          name="Camera"
+          component={CameraStackScreen}
+          options={{
+            tabBarButton: () => <TabBarMidleButton />,
+          }}
+        />
+        <Tab.Screen name="Collect" component={CollectStackScreen} />
+        <Tab.Screen name="Profile" component={ProfileStackScreen} />
       </Tab.Navigator>
     </NavigationContainer>
   );
 }
 
-/**<Stack.Navigator screenOptions={{headerShown: false}}>
-        {user ? (
-          <Stack.Screen name="Home">
-            {props => <Home {...props} extraData={user} />}
-          </Stack.Screen>
-        ) : (
-          <>
-            <Tab.Screen name="Login" component={Login} />
-            <Tab.Screen name="Create" component={Create} />
-          </>
-        )}
-      </Stack.Navigator> */
+function TabBarFunction() {
+  return <TabBarMidleButton />;
+}
 
 const LoginStack = createStackNavigator();
 
@@ -97,6 +95,14 @@ function LoginStackScreen() {
           headerTitle: props => MenuFunction(),
           headerStyle: {
             backgroundColor: '#f5eef5',
+            shadowColor: '#f5eef5',
+            shadowOffset: {
+              width: 0,
+              height: 0,
+            },
+            shadowOpacity: 0,
+            shadowRadius: 0,
+            elevation: 0,
           },
         }}
       />
@@ -107,4 +113,112 @@ function LoginStackScreen() {
 
 function MenuFunction() {
   return <Menu />;
+}
+
+const CameraStack = createStackNavigator();
+
+function CameraStackScreen() {
+  return (
+    <CameraStack.Navigator>
+      <CameraStack.Screen
+        name="Camera"
+        component={Camera}
+        options={{
+          headerTitle: props => MenuFunction(),
+          headerStyle: {
+            backgroundColor: '#f5eef5',
+            shadowColor: '#f5eef5',
+            shadowOffset: {
+              width: 0,
+              height: 0,
+            },
+            shadowOpacity: 0,
+            shadowRadius: 2,
+            elevation: 0,
+          },
+        }}
+      />
+    </CameraStack.Navigator>
+  );
+}
+
+const ProfileStack = createStackNavigator();
+
+function ProfileStackScreen() {
+  return (
+    <ProfileStack.Navigator>
+      <ProfileStack.Screen
+        name="Profile"
+        component={Profile}
+        options={{
+          headerTitle: props => MenuFunction(),
+          headerStyle: {
+            backgroundColor: '#f5eef5',
+            shadowColor: '#f5eef5',
+            shadowOffset: {
+              width: 0,
+              height: 0,
+            },
+            shadowOpacity: 0,
+            shadowRadius: 2,
+            elevation: 0,
+          },
+        }}
+      />
+    </ProfileStack.Navigator>
+  );
+}
+
+const CollectStack = createStackNavigator();
+
+function CollectStackScreen() {
+  return (
+    <CollectStack.Navigator>
+      <CollectStack.Screen
+        name="Collect"
+        component={Collect}
+        options={{
+          headerTitle: props => MenuFunction(),
+          headerStyle: {
+            backgroundColor: '#f5eef5',
+            shadowColor: '#f5eef5',
+            shadowOffset: {
+              width: 0,
+              height: 0,
+            },
+            shadowOpacity: 0,
+            shadowRadius: 2,
+            elevation: 0,
+          },
+        }}
+      />
+    </CollectStack.Navigator>
+  );
+}
+
+const HomeStack = createStackNavigator();
+
+function HomeStackScreen() {
+  return (
+    <HomeStack.Navigator>
+      <HomeStack.Screen
+        name="Home"
+        component={Home}
+        options={{
+          headerTitle: props => MenuFunction(),
+          headerStyle: {
+            backgroundColor: '#f5eef5',
+            shadowColor: '#f5eef5',
+            shadowOffset: {
+              width: 0,
+              height: 0,
+            },
+            shadowOpacity: 0,
+            shadowRadius: 2,
+            elevation: 0,
+          },
+        }}
+      />
+    </HomeStack.Navigator>
+  );
 }

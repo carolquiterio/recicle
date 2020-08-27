@@ -6,6 +6,7 @@ export const Container = styled.View`
   align-items: center;
   justify-content: space-between;
   background-color: #f5eef5;
+  height: 50px;
 `;
 
 export const IconContainerMenu = styled.TouchableOpacity`

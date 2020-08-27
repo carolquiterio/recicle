@@ -18,14 +18,14 @@ export const StyledInput = styled.TextInput`
   padding-left: 20px;
   width: 100%;
   margin-bottom: 14px;
-  height: 14%;
+  height: 42px;
 `;
 
 export const ReadyButton = styled.TouchableOpacity`
   border-radius: 30px;
   background-color: #34cb79;
   text-align: center;
-  height: 14%;
+  height: 42px;
   font-weight: 500;
   justify-content: center;
 `;
