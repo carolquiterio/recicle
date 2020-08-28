@@ -22,8 +22,8 @@ export const NameText = styled.Text`
 `;
 
 export const ImageLogo = styled(Image)`
-  border-radius: 1200px;
-  transform: scale(0.055);
+  border-radius: 1050px;
+  transform: scale(0.07);
 `;
 
 export const ImageContainer = styled.View`

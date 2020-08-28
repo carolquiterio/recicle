@@ -1,4 +1,5 @@
 import React from 'react';
+import {View, Text, Image} from 'react-native';
 import ImageCarol from '../../assets/carol.jpg';
 
 import {
