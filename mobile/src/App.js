@@ -64,7 +64,7 @@ export default function App() {
           inactiveTintColor: 'gray',
         }}>
         <Tab.Screen name="Login" component={LoginStackScreen} />
-        <Tab.Screen name="Home" component={HomeStackScreen} />
+
         <Tab.Screen
           name="Camera"
           component={CameraStackScreen}
@@ -72,7 +72,7 @@ export default function App() {
             tabBarButton: () => <TabBarMidleButton />,
           }}
         />
-        <Tab.Screen name="Collect" component={CollectStackScreen} />
+
         <Tab.Screen name="Profile" component={ProfileStackScreen} />
       </Tab.Navigator>
     </NavigationContainer>
