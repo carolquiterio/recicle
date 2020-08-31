@@ -14,7 +14,7 @@
 
 <a id="about"></a>
 
-## :bookmark: Abut
+## :bookmark: About
 
 The <strong>Recicle</strong> is an app to help raise awareness about the impacts of waste on the environment.
 
