@@ -1,8 +1,9 @@
 import 'react-native-gesture-handler'; //isso aqui é necessário para usarmos a lib react navigation
 //(essa lib é para navegar entre as telas)
-
+import LinearGradient from 'react-native-linear-gradient';
 import React, {useEffect, useState} from 'react';
-
+import {Button, View, StyleSheet, TouchableOpacity} from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 //import {Button, Text} from 'react-native';
 
 //import Icon from 'react-native-vector-icons/FontAwesome';
@@ -62,6 +63,7 @@ export default function App() {
         tabBarOptions={{
           activeTintColor: '#34CB79',
           inactiveTintColor: 'gray',
+          showLabel: false,
         }}>
         <Tab.Screen name="Login" component={LoginStackScreen} />
 
@@ -69,7 +71,17 @@ export default function App() {
           name="Camera"
           component={CameraStackScreen}
           options={{
-            tabBarButton: () => <TabBarMidleButton />,
+            tabBarIcon: ({tintColor}) => (
+              <View>
+                <LinearGradient
+                  style={styles.iconTabRound}
+                  start={{x: 0, y: 1}}
+                  end={{x: 0, y: 0}}
+                  colors={['#08DDB4', '#34bc79']}>
+                  <GraphIcon name="camera" size={22} color="#FFF" />
+                </LinearGradient>
+              </View>
+            ),
           }}
         />
 
@@ -222,3 +234,25 @@ function HomeStackScreen() {
     </HomeStack.Navigator>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  iconTabRound: {
+    width: 60,
+    height: 60,
+    borderRadius: 30,
+    marginBottom: 20,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    elevation: 6,
+    shadowColor: '#08DDB4',
+    shadowOffset: {width: 0, height: 2},
+    shadowOpacity: 0.2,
+    shadowRadius: 5,
+  },
+});
