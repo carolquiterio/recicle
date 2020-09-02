@@ -36,28 +36,22 @@ export default function App() {
     <NavigationContainer>
       <Tab.Navigator
         screenOptions={({route}) => ({
-          tabBarIcon: ({focused, color, size}) => {
+          tabBarIcon: ({color, size}) => {
             let iconName;
 
-            if (route.name === 'Login') {
-              iconName = focused ? 'map' : 'map';
-              color = '#c4c4c4';
-            } else if (route.name === 'Profile') {
-              iconName = focused ? 'user' : 'user';
-              color = '#c4c4c4';
-            } else if (route.name === 'Camera') {
-              iconName = focused ? 'camera' : 'camera';
-              color = '#fff';
-            } else if (route.name === 'Collect') {
-              iconName = focused ? 'search' : 'search';
-              color = '#c4c4c4';
-            } else if (route.name === 'Home') {
-              iconName = focused ? 'graph' : 'graph';
-              color = '#c4c4c4';
+            switch (route.name) {
+              case 'Home':
+                iconName = 'home';
+                break;
+              case 'Login':
+                iconName = 'award';
+                break;
+              default:
+                iconName = 'circle';
+                break;
             }
-
             // You can return any component that you like here
-            return <FeatherIcon name={iconName} size={24} color={color} />;
+            return <FeatherIcon name={iconName} size={28} color={color} />;
           },
         })}
         tabBarOptions={{
@@ -85,14 +79,10 @@ export default function App() {
           }}
         />
 
-        <Tab.Screen name="Profile" component={ProfileStackScreen} />
+        <Tab.Screen name="Home" component={HomeStackScreen} />
       </Tab.Navigator>
     </NavigationContainer>
   );
-}
-
-function TabBarFunction() {
-  return <TabBarMidleButton />;
 }
 
 const LoginStack = createStackNavigator();
@@ -119,6 +109,25 @@ function LoginStackScreen() {
         }}
       />
       <LoginStack.Screen name="Create" component={Create} />
+      <LoginStack.Screen
+        name="Profile"
+        component={Profile}
+        options={{
+          title: '',
+          headerStyle: {
+            backgroundColor: '#f5eef5',
+            shadowColor: '#f5eef5',
+            shadowOffset: {
+              width: 0,
+              height: 0,
+            },
+            shadowOpacity: 0,
+            shadowRadius: 0,
+            elevation: 0,
+          },
+          headerTintColor: '#34cb79',
+        }}
+      />
     </LoginStack.Navigator>
   );
 }

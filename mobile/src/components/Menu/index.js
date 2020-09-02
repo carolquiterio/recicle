@@ -19,11 +19,11 @@ const Menu = () => {
   return (
     <Container>
       <IconContainerMenu>
-        <Icon
+        <FeatherIcon
           name="user"
           color="#34cb79"
-          onPress={() => navigation.navigate('Create')}
-          size={50}
+          onPress={() => navigation.navigate('Profile')}
+          size={40}
           iconStyle={{margin: 100}}
         />
       </IconContainerMenu>
