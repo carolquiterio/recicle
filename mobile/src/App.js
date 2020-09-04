@@ -1,8 +1,9 @@
 import 'react-native-gesture-handler'; //isso aqui é necessário para usarmos a lib react navigation
 //(essa lib é para navegar entre as telas)
-
+import LinearGradient from 'react-native-linear-gradient';
 import React, {useEffect, useState} from 'react';
-
+import {Button, View, StyleSheet, TouchableOpacity} from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 //import {Button, Text} from 'react-native';
 
 //import Icon from 'react-native-vector-icons/FontAwesome';
@@ -35,33 +36,28 @@ export default function App() {
     <NavigationContainer>
       <Tab.Navigator
         screenOptions={({route}) => ({
-          tabBarIcon: ({focused, color, size}) => {
+          tabBarIcon: ({color, size}) => {
             let iconName;
 
-            if (route.name === 'Login') {
-              iconName = focused ? 'map' : 'map';
-              color = '#c4c4c4';
-            } else if (route.name === 'Profile') {
-              iconName = focused ? 'user' : 'user';
-              color = '#c4c4c4';
-            } else if (route.name === 'Camera') {
-              iconName = focused ? 'camera' : 'camera';
-              color = '#fff';
-            } else if (route.name === 'Collect') {
-              iconName = focused ? 'search' : 'search';
-              color = '#c4c4c4';
-            } else if (route.name === 'Home') {
-              iconName = focused ? 'graph' : 'graph';
-              color = '#c4c4c4';
+            switch (route.name) {
+              case 'Home':
+                iconName = 'home';
+                break;
+              case 'Login':
+                iconName = 'award';
+                break;
+              default:
+                iconName = 'circle';
+                break;
             }
-
             // You can return any component that you like here
-            return <FeatherIcon name={iconName} size={24} color={color} />;
+            return <FeatherIcon name={iconName} size={28} color={color} />;
           },
         })}
         tabBarOptions={{
           activeTintColor: '#34CB79',
           inactiveTintColor: 'gray',
+          showLabel: false,
         }}>
         <Tab.Screen name="Login" component={LoginStackScreen} />
 
@@ -69,18 +65,24 @@ export default function App() {
           name="Camera"
           component={CameraStackScreen}
           options={{
-            tabBarButton: () => <TabBarMidleButton />,
+            tabBarIcon: ({tintColor}) => (
+              <View>
+                <LinearGradient
+                  style={styles.iconTabRound}
+                  start={{x: 0, y: 1}}
+                  end={{x: 0, y: 0}}
+                  colors={['#08DDB4', '#34bc79']}>
+                  <GraphIcon name="camera" size={22} color="#FFF" />
+                </LinearGradient>
+              </View>
+            ),
           }}
         />
 
-        <Tab.Screen name="Profile" component={ProfileStackScreen} />
+        <Tab.Screen name="Home" component={HomeStackScreen} />
       </Tab.Navigator>
     </NavigationContainer>
   );
-}
-
-function TabBarFunction() {
-  return <TabBarMidleButton />;
 }
 
 const LoginStack = createStackNavigator();
@@ -107,6 +109,25 @@ function LoginStackScreen() {
         }}
       />
       <LoginStack.Screen name="Create" component={Create} />
+      <LoginStack.Screen
+        name="Profile"
+        component={Profile}
+        options={{
+          title: '',
+          headerStyle: {
+            backgroundColor: '#f5eef5',
+            shadowColor: '#f5eef5',
+            shadowOffset: {
+              width: 0,
+              height: 0,
+            },
+            shadowOpacity: 0,
+            shadowRadius: 0,
+            elevation: 0,
+          },
+          headerTintColor: '#34cb79',
+        }}
+      />
     </LoginStack.Navigator>
   );
 }
@@ -222,3 +243,25 @@ function HomeStackScreen() {
     </HomeStack.Navigator>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  iconTabRound: {
+    width: 60,
+    height: 60,
+    borderRadius: 30,
+    marginBottom: 20,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    elevation: 6,
+    shadowColor: '#08DDB4',
+    shadowOffset: {width: 0, height: 2},
+    shadowOpacity: 0.2,
+    shadowRadius: 5,
+  },
+});

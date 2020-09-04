@@ -1,7 +1,8 @@
 import React from 'react';
 import {Image, StyleSheet} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-import Icon from 'react-native-vector-icons/Feather';
+import Icon from 'react-native-vector-icons/EvilIcons';
+import FeatherIcon from 'react-native-vector-icons/Feather';
 import {
   Container,
   LogoContainerMenu,
@@ -18,11 +19,12 @@ const Menu = () => {
   return (
     <Container>
       <IconContainerMenu>
-        <Icon
+        <FeatherIcon
           name="user"
           color="#34cb79"
-          onPress={() => navigation.navigate('Create')}
+          onPress={() => navigation.navigate('Profile')}
           size={40}
+          iconStyle={{margin: 100}}
         />
       </IconContainerMenu>
       <LogoContainerMenu>
@@ -30,7 +32,7 @@ const Menu = () => {
       </LogoContainerMenu>
 
       <IconContainerMenu>
-        <Icon
+        <FeatherIcon
           name="plus"
           color="#34cb79"
           onPress={() => navigation.navigate('Create')}
