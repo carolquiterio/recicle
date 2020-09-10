@@ -10,7 +10,7 @@ export const Container = styled.KeyboardAvoidingView`
 `;
 
 export const FormContainer = styled.View`
-  padding: 50px 20px 20px 20px;
+  padding: 50px 25px 25px 25px;
   background-color: #fff;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
@@ -44,7 +44,7 @@ export const ButtonText = styled.Text`
   color: #fff;
   text-align: center;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 900;
 `;
 
 export const StyledText = styled.Text`
@@ -65,12 +65,11 @@ export const StyledPasswordText = styled.Text`
 `;
 
 export const StyledGreenText = styled.Text`
-  font-weight: bold;
+  font-weight: 500;
   font-size: 18px;
   color: #34cb79;
   align-self: center;
   margin-top: 10px;
-  margin-bottom: 140px;
 `;
 
 export const InputContainer = styled.View`
@@ -79,15 +78,25 @@ export const InputContainer = styled.View`
 
 export const CreateAccountContainer = styled.View`
   justify-content: flex-end;
+  margin-top: 20%;
+`;
+
+export const ButtonsContainer = styled.View`
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20%;
 `;
 
 export const OtherWyasButton = styled.TouchableOpacity`
   border-width: 1px;
   border-color: #efeeee;
   border-radius: 8px;
-  align-items: center;
+  margin-right: 15px;
   justify-content: center;
-  width: 20%;
+  align-items: center;
+  width: 30%;
   height: 40px;
   flex-direction: row;
 `;

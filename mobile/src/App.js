@@ -15,7 +15,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
-import Create from './pages/Create';
+import CreateAccount from './pages/CreateAccount';
 import Login from './pages/Login';
 import Home from './pages/Home';
 import Collect from './pages/Collect';
@@ -108,7 +108,7 @@ function LoginStackScreen() {
           },
         }}
       />
-      <LoginStack.Screen name="Create" component={Create} />
+      <LoginStack.Screen name="CreateAccount" component={CreateAccount} />
       <LoginStack.Screen
         name="Profile"
         component={Profile}

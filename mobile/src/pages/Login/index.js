@@ -13,6 +13,7 @@ import {
   StyledPasswordText,
   OtherWyasButton,
   FormContainer,
+  ButtonsContainer,
 } from './styles';
 
 import logoImage from '../../assets/logo.png';
@@ -52,7 +53,7 @@ export default function Login({navigation}) {
             placeholderTextColor="gray"
             //ref={(input) => { this.passwordTextInput = input; }}
             //returnKeyType = { "next" }
-            onChangeText={text => setPassword(text)}
+            onChangeText={text => setPasssword(text)}
             value={password}
             style={shadowStyle}
           />
@@ -62,9 +63,14 @@ export default function Login({navigation}) {
           </ReadyButton>
 
           <StyledPasswordText>Esqueci minha senha!</StyledPasswordText>
-          <OtherWyasButton>
-            <StyledGreenText>Entrar</StyledGreenText>
-          </OtherWyasButton>
+          <ButtonsContainer>
+            <OtherWyasButton>
+              <StyledGreenText>Entrar</StyledGreenText>
+            </OtherWyasButton>
+            <OtherWyasButton>
+              <StyledGreenText>Entrar</StyledGreenText>
+            </OtherWyasButton>
+          </ButtonsContainer>
           <CreateAccountContainer>
             <StyledText>
               Ainda não tem conta?
