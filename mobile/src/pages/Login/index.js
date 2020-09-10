@@ -11,6 +11,8 @@ import {
   InputContainer,
   CreateAccountContainer,
   StyledPasswordText,
+  OtherWyasButton,
+  FormContainer,
 } from './styles';
 
 import logoImage from '../../assets/logo.png';
@@ -27,49 +29,53 @@ export default function Login({navigation}) {
 
   return (
     <Container>
-      <InputContainer>
-        <StyledInput
-          //value={email}
-          placeholder="Email"
-          autoCorrect={false}
-          placeholderTextColor="gray"
-          returnKeyType={'next'}
-          onSubmitEditing={() => {
-            this.passwordTextInput.focus();
-          }}
-          onChangeText={text => setEmail(text)}
-          value={email}
-          style={shadowStyle}
-        />
+      <FormContainer>
+        <InputContainer>
+          <StyledInput
+            //value={email}
+            placeholder="Email"
+            autoCorrect={false}
+            placeholderTextColor="gray"
+            returnKeyType={'next'}
+            onSubmitEditing={() => {
+              this.passwordTextInput.focus();
+            }}
+            onChangeText={text => setEmail(text)}
+            value={email}
+            style={shadowStyle}
+          />
 
-        <StyledInput
-          //value={ password }
-          secureTextEntry={true}
-          placeholder="Senha"
-          placeholderTextColor="gray"
-          //ref={(input) => { this.passwordTextInput = input; }}
-          //returnKeyType = { "next" }
-          onChangeText={text => setPassword(text)}
-          value={password}
-          style={shadowStyle}
-        />
+          <StyledInput
+            //value={ password }
+            secureTextEntry={true}
+            placeholder="Senha"
+            placeholderTextColor="gray"
+            //ref={(input) => { this.passwordTextInput = input; }}
+            //returnKeyType = { "next" }
+            onChangeText={text => setPassword(text)}
+            value={password}
+            style={shadowStyle}
+          />
 
-        <ReadyButton onPress={() => handleLoginPress()} style={shadowStyle}>
-          <ButtonText>Pronto!</ButtonText>
-        </ReadyButton>
+          <ReadyButton onPress={() => handleLoginPress()} style={shadowStyle}>
+            <ButtonText>Pronto!</ButtonText>
+          </ReadyButton>
 
-        <StyledPasswordText>Esqueci minha senha!</StyledPasswordText>
-
-        <CreateAccountContainer>
-          <StyledText>
-            Ainda não tem conta?
-            <StyledGreenText onPress={handleCreatePress}>
-              {' '}
-              Criar
-            </StyledGreenText>
-          </StyledText>
-        </CreateAccountContainer>
-      </InputContainer>
+          <StyledPasswordText>Esqueci minha senha!</StyledPasswordText>
+          <OtherWyasButton>
+            <StyledGreenText>Entrar</StyledGreenText>
+          </OtherWyasButton>
+          <CreateAccountContainer>
+            <StyledText>
+              Ainda não tem conta?
+              <StyledGreenText onPress={handleCreatePress}>
+                {' '}
+                Criar
+              </StyledGreenText>
+            </StyledText>
+          </CreateAccountContainer>
+        </InputContainer>
+      </FormContainer>
     </Container>
   );
 }

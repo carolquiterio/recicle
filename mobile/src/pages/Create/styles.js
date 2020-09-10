@@ -2,12 +2,13 @@ import styled from 'styled-components/native';
 
 export const StyledTextInput = styled.TextInput`
   background-color: #f5eef5;
-  border-radius: 30;
+  border-radius: 12px;
   padding-left: 20;
   width: 100%;
-  margin-bottom: 20;
+  margin-bottom: 14px;
   font-family: 'Roboto';
   font-size: 16px;
+  height: 42px;
 `;
 
 export const Container = styled.View`
@@ -18,11 +19,11 @@ export const Container = styled.View`
 
 export const StyledButton = styled.TouchableOpacity`
   background-color: #34cb79;
-  border-radius: 30px;
+  border-radius: 12px;
   text-align: center;
   align-items: center;
   font-weight: 500;
-  height: 50px;
+  height: 42px;
   justify-content: center;
 `;
 

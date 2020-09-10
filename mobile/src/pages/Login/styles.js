@@ -5,7 +5,17 @@ export const Container = styled.KeyboardAvoidingView`
   flex: 1;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  background-color: #34cb79;
+  justify-content: flex-end;
+`;
+
+export const FormContainer = styled.View`
+  padding: 50px 20px 20px 20px;
+  background-color: #fff;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  width: 100%;
+  height: 85%;
 `;
 
 export const BackImage = styled(Image)`
@@ -14,7 +24,7 @@ export const BackImage = styled(Image)`
 
 export const StyledInput = styled.TextInput`
   background-color: #f5eef5;
-  border-radius: 30px;
+  border-radius: 12px;
   padding-left: 20px;
   width: 100%;
   margin-bottom: 14px;
@@ -22,7 +32,7 @@ export const StyledInput = styled.TextInput`
 `;
 
 export const ReadyButton = styled.TouchableOpacity`
-  border-radius: 30px;
+  border-radius: 12px;
   background-color: #34cb79;
   text-align: center;
   height: 42px;
@@ -69,4 +79,15 @@ export const InputContainer = styled.View`
 
 export const CreateAccountContainer = styled.View`
   justify-content: flex-end;
+`;
+
+export const OtherWyasButton = styled.TouchableOpacity`
+  border-width: 1px;
+  border-color: #efeeee;
+  border-radius: 8px;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+  height: 40px;
+  flex-direction: row;
 `;
