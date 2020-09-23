@@ -5,14 +5,14 @@ const styles = StyleSheet.create({
      backgroundColor: '#fff',
      borderWidth: 1,
      borderColor: '#e6e6f0',
-     borderRadius: 8,
+     borderRadius: 30,
      marginBottom: 16,
      overflow: 'hidden'
    },
    profile: {
      flexDirection: 'row',
      alignItems: 'center',
-     padding: 24,
+     padding: 20,
    },
    img: {
     width: 350,
