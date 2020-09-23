@@ -12,14 +12,14 @@ import {
   StyledGreenText,
 } from './styles';
 
-const CreateAccount = ({navigation}) => {
+const Create = ({navigation}) => {
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
   const handleLoginPress = () => {
-    navigation.navigate('Login');
+    navigation.navigate('Profile');
   };
 
   const onRegisterPress = () => {
@@ -134,4 +134,4 @@ const CreateAccount = ({navigation}) => {
   );
 };
 
-export default CreateAccount;
+export default Create;

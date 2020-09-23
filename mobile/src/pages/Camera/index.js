@@ -1,13 +1,11 @@
 import React from 'react';
 
-import {StyledContainer, StyledText, TopMenuContainer} from './styles';
+import {StyledContainer, StyledText} from './styles';
 
 export default function Camera() {
   return (
-    <>
-      <StyledContainer>
-        <StyledText>Camera</StyledText>
-      </StyledContainer>
-    </>
+    <StyledContainer>
+      <StyledText>Camera</StyledText>
+    </StyledContainer>
   );
 }
