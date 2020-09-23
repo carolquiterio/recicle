@@ -11,9 +11,9 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import GraphIcon from 'react-native-vector-icons/Entypo';
 import FeatherIcon from 'react-native-vector-icons/Feather'; //map  //search //camera //user
 
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 import CreateAccount from './pages/CreateAccount';
 import Login from './pages/Login';
@@ -21,6 +21,7 @@ import Home from './pages/Home';
 import Collect from './pages/Collect';
 import Camera from './pages/Camera';
 import Profile from './pages/Profile';
+import Welcome from './pages/Welcome';
 
 import Menu from './components/Menu';
 import TabBarMidleButton from './components/TabBarMidleButton';
@@ -63,7 +64,7 @@ export default function App() {
 
         <Tab.Screen
           name="Camera"
-          component={CameraStackScreen}
+          component={WelcomeStackScreen}
           options={{
             tabBarIcon: ({tintColor}) => (
               <View>
@@ -241,6 +242,21 @@ function HomeStackScreen() {
         }}
       />
     </HomeStack.Navigator>
+  );
+}
+
+const WelcomeStack = createStackNavigator();
+
+function WelcomeStackScreen() {
+  return (
+    <WelcomeStack.Navigator screenOptions={{headerShown: false}}>
+      <WelcomeStack.Screen name="Welcome" component={Welcome} />
+      <WelcomeStack.Screen
+        name="LoginStackScreen"
+        component={LoginStackScreen}
+      />
+      <WelcomeStack.Screen name="CreateAccount" component={CreateAccount} />
+    </WelcomeStack.Navigator>
   );
 }
 

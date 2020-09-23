@@ -38,6 +38,7 @@ export const ReadyButton = styled.TouchableOpacity`
   height: 42px;
   font-weight: 500;
   justify-content: center;
+  width: 100%;
 `;
 
 export const ButtonText = styled.Text`
