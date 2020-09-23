@@ -11,9 +11,9 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import GraphIcon from 'react-native-vector-icons/Entypo';
 import FeatherIcon from 'react-native-vector-icons/Feather'; //map  //search //camera //user
 
-import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import CreateAccount from './pages/CreateAccount';
 import Login from './pages/Login';

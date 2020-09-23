@@ -1,12 +1,22 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import { ScrollView, View } from 'react-native';
 
-import {StyledContainer, StyledText} from './styles';
+import PageHeader from '../../components/PageHeader/index.js';
+import CollectItem from '../../components/CollectItem/index.js';
+
+//import {StyledContainer, StyledText, ScrollItem } from './styles';
+import styles from './estilo';
 
 export default function Home(props) {
   return (
-    <StyledContainer>
-      <StyledText>Home</StyledText>
-    </StyledContainer>
+     <View >
+        <PageHeader />
+         
+         <ScrollView style={styles.scrollItem}>
+           <CollectItem /> 
+         </ScrollView>
+          
+     </View>
+    
   );
 }
