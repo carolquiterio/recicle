@@ -134,4 +134,4 @@ const CreateAccount = ({navigation}) => {
   );
 };
 
-export default Create;
+export default CreateAccount;
