@@ -27,10 +27,10 @@ export const ImageLogo = styled(Image)`
 `;
 
 export const ImageContainer = styled.View`
+  align-items: center;
   height: 50%;
   width: 100%;
   justify-content: center;
-  align-items: center;
 `;
 
 export const ThreeContainer = styled.View`
