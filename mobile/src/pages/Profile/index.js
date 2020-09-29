@@ -11,6 +11,8 @@ import {
   ImageContainer,
   ImageLogo,
   NumberOfThreesText,
+  NavItem,
+  NavText,
 } from './styles';
 
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
@@ -23,7 +25,7 @@ export default function Profile() {
         <Image style={styles.avatar} source={ImageCarol}/>
      
         <View style={styles.profileInfo}>
-           <Text style={styles.name} >@carol_quiterio</Text>
+           <Text style={styles.name}>@carol_quiterio</Text>
            <Text style={styles.data}> Desde 2020</Text>
         </View>
       </View>
@@ -38,30 +40,30 @@ export default function Profile() {
       </LinearGradient>
 
       <View style={styles.options}>
-         <Text>
-           <EvilIcons name="gear" size={30}/>
-           Configurações
-         </Text>
+        <NavItem>
+            <EvilIcons name="gear" size={30}  color="#787878"/>
+             <NavText>Configurações</NavText>
+        </NavItem>
         
-        <Text> 
-          <EvilIcons name="pencil" size={30}/>   
-          Terafas 
-        </Text>
+        <NavItem>  
+          <EvilIcons name="pencil" size={30}  color="#787878"/>   
+          <NavText>Tarefas</NavText>
+        </NavItem>
 
-        <Text> 
-          <IonIcons name="chatbubble-ellipses-outline" size={30}/>  
-          Comunidade 
-        </Text>
+        <NavItem> 
+          <IonIcons name="chatbubble-ellipses-outline" size={25} color="#787878" />  
+          <NavText>Comunidade</NavText>
+        </NavItem>
         
-        <Text>
-           <IonIcons name="help-circle-outline" size={30}/>
-           Preciso de ajuda 
-        </Text>
+        <NavItem >
+           <IonIcons name="help-circle-outline" size={26}  color="#787878"/>
+           <NavText>Preciso de ajuda</NavText>
+        </NavItem>
         
-        <Text>
-          <IonIcons name="log-in-outline" size={30}/>
-           Sair 
-        </Text>
+        <NavItem>
+          <IonIcons name="log-in-outline" size={25}  color="#787878"/>
+          <NavText>Sair</NavText> 
+        </NavItem>
       </View>
     </View>
   );
@@ -114,7 +116,6 @@ const styles = StyleSheet.create({
 
   options: {
     paddingRight: 200,
-    fontSize: 30,
     justifyContent: 'space-between',
     flex: 0,
     marginBottom: 10,

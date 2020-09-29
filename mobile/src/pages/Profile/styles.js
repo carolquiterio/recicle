@@ -47,3 +47,14 @@ export const NumberOfThreesText = styled.Text`
   color: #ffffff;
   font-weight: 900;
 `;
+
+export const NavItem = styled.View`
+  flex-direction: row;
+  align-items: center;
+  padding: 5px 0;
+`;
+
+export const NavText = styled.Text`
+  margin-left: 10px;
+
+`;
