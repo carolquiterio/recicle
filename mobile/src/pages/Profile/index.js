@@ -3,17 +3,7 @@ import {View, Text, Image, StyleSheet} from 'react-native';
 import ImageCarol from '../../assets/carol.jpg';
 import LinearGradient from 'react-native-linear-gradient';
 
-import {
-  Container,
-  ThreeText,
-  NameText,
-  ThreeContainer,
-  ImageContainer,
-  ImageLogo,
-  NumberOfThreesText,
-  NavItem,
-  NavText,
-} from './styles';
+import { ThreeText, NumberOfThreesText, NavItem, NavText } from './styles';
 
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import IonIcons from 'react-native-vector-icons/Ionicons';
@@ -26,7 +16,7 @@ export default function Profile() {
      
         <View style={styles.profileInfo}>
            <Text style={styles.name}>@carol_quiterio</Text>
-           <Text style={styles.data}> Desde 2020</Text>
+           <Text style={styles.data}>Desde 2020</Text>
         </View>
       </View>
 
@@ -47,21 +37,21 @@ export default function Profile() {
         
         <NavItem>  
           <EvilIcons name="pencil" size={30}  color="#787878"/>   
-          <NavText>Tarefas</NavText>
+          <NavText>Histórico</NavText>
         </NavItem>
 
         <NavItem> 
           <IonIcons name="chatbubble-ellipses-outline" size={25} color="#787878" />  
-          <NavText>Comunidade</NavText>
-        </NavItem>
-        
-        <NavItem >
-           <IonIcons name="help-circle-outline" size={26}  color="#787878"/>
-           <NavText>Preciso de ajuda</NavText>
+          <NavText>Meus</NavText>
         </NavItem>
         
         <NavItem>
-          <IonIcons name="log-in-outline" size={25}  color="#787878"/>
+           <IonIcons name="help-circle-outline" size={26}  color="#787878"/>
+           <NavText>Como ganhar moedas?</NavText>
+        </NavItem>
+        
+        <NavItem>
+          <IonIcons name="log-in-outline" size={26}  color="#787878"/>
           <NavText>Sair</NavText> 
         </NavItem>
       </View>
@@ -72,9 +62,10 @@ export default function Profile() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     alignItems: 'center',
     padding: 10,
+    margin: 5,
   },
   iconTabRound: {
     height: '20%',
@@ -94,7 +85,7 @@ const styles = StyleSheet.create({
   profile: {
     flexDirection: 'row',
     alignItems: 'center',
-    padding: 24,
+    padding: 30,
     paddingTop: 0,
     paddingRight: 150,
   },
@@ -102,24 +93,22 @@ const styles = StyleSheet.create({
     width: 81,
     height: 86,
     borderRadius: 40,
-    backgroundColor: '#efefef',
   },
   profileInfo: {
     marginLeft: 16,
   },
   name: {
-    fontSize: 20
+    fontSize: 20,
   },
   data: {
-    color: '#787878'
+    color: '#787878',
+    fontSize: 16,
   },
 
   options: {
-    paddingRight: 200,
-    justifyContent: 'space-between',
     flex: 0,
-    marginBottom: 10,
-    alignContent: 'space-between',
+    paddingRight: 200,
+    justifyContent: 'space-evenly',
   },
 
 });

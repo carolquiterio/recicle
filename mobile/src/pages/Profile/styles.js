@@ -21,18 +21,6 @@ export const NameText = styled.Text`
   margin-top: -68px;
 `;
 
-export const ImageLogo = styled(Image)`
-  border-radius: 1050px;
-  transform: scale(0.07);
-`;
-
-export const ImageContainer = styled.View`
-  align-items: center;
-  height: 50%;
-  width: 100%;
-  justify-content: center;
-`;
-
 export const ThreeContainer = styled.View`
   height: 20%;
   width: 100%;
@@ -51,10 +39,11 @@ export const NumberOfThreesText = styled.Text`
 export const NavItem = styled.View`
   flex-direction: row;
   align-items: center;
-  padding: 5px 0;
+  padding: 5px ;
+  margin-left: 15px;
+  margin-bottom: 2px;
 `;
 
 export const NavText = styled.Text`
   margin-left: 10px;
-
 `;
