@@ -1,10 +1,9 @@
 import React from 'react';
-import { View, Text, Image } from 'react-native';
+import { View } from 'react-native';
 import { BorderlessButton }  from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 
-import backIcon from '../../assets/icons/back.png';
-
+import BackIcon from 'react-native-vector-icons/AntDesign';
 import styles from './styles';
 
 function PageHeader(){
@@ -18,7 +17,7 @@ function PageHeader(){
     <View style={styles.container}>
       <View style={styles.topBar}>
         <BorderlessButton onPress={handlerGoBack}>
-          <Image source={backIcon} resizeMode="contain"/> 
+          <BackIcon style={styles.flecha} name="arrowleft" size={25} color="#FFFFFF" />
         </BorderlessButton>
       </View>
     </View>
