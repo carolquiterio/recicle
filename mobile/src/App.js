@@ -22,6 +22,8 @@ import Collect from './pages/Collect';
 import Camera from './pages/Camera';
 import Profile from './pages/Profile';
 import Welcome from './pages/Welcome';
+import Details from './pages/Details';
+import Tips from './pages/Tips';
 
 import Menu from './components/Menu';
 import TabBarMidleButton from './components/TabBarMidleButton';
@@ -60,11 +62,11 @@ export default function App() {
           inactiveTintColor: 'gray',
           showLabel: false,
         }}>
-        <Tab.Screen name="Login" component={LoginStackScreen} />
+        <Tab.Screen name="Login" component={DetailsStackScreen} />
 
         <Tab.Screen
           name="Camera"
-          component={WelcomeStackScreen}
+          component={TipsStackScreen}
           options={{
             tabBarIcon: ({tintColor}) => (
               <View>
@@ -281,3 +283,57 @@ const styles = StyleSheet.create({
     shadowRadius: 5,
   },
 });
+
+const DetailsStack = createStackNavigator();
+
+function DetailsStackScreen() {
+  return (
+    <DetailsStack.Navigator>
+      <DetailsStack.Screen
+        name="Details"
+        component={Details}
+        options={{
+          headerTitle: props => MenuFunction(),
+          headerStyle: {
+            backgroundColor: '#f5eef5',
+            shadowColor: '#f5eef5',
+            shadowOffset: {
+              width: 0,
+              height: 0,
+            },
+            shadowOpacity: 0,
+            shadowRadius: 2,
+            elevation: 0,
+          },
+        }}
+      />
+    </DetailsStack.Navigator>
+  );
+}
+
+const TipsStack = createStackNavigator();
+
+function TipsStackScreen() {
+  return (
+    <TipsStack.Navigator>
+      <TipsStack.Screen
+        name="Tips"
+        component={Tips}
+        options={{
+          headerTitle: props => MenuFunction(),
+          headerStyle: {
+            backgroundColor: '#f5eef5',
+            shadowColor: '#f5eef5',
+            shadowOffset: {
+              width: 0,
+              height: 0,
+            },
+            shadowOpacity: 0,
+            shadowRadius: 2,
+            elevation: 0,
+          },
+        }}
+      />
+    </TipsStack.Navigator>
+  );
+}
