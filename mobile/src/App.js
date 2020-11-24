@@ -21,6 +21,7 @@ import Home from './pages/Home';
 import Collect from './pages/Collect';
 import Camera from './pages/Camera';
 import Profile from './pages/Profile';
+import RecicleMap from './pages/Map/RecicleMap';
 
 import Menu from './components/Menu';
 import TabBarMidleButton from './components/TabBarMidleButton';
@@ -33,7 +34,13 @@ export default function App() {
   const [user, setUser] = useState(null);
 
   return (
-    <NavigationContainer>
+    <View>
+      <RecicleMap />
+    </View>
+    
+  );
+}
+    /*<NavigationContainer>
       <Tab.Navigator
         screenOptions={({route}) => ({
           tabBarIcon: ({color, size}) => {
@@ -242,7 +249,7 @@ function HomeStackScreen() {
       />
     </HomeStack.Navigator>
   );
-}
+}*/
 
 const styles = StyleSheet.create({
   container: {
