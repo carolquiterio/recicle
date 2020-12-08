@@ -22,7 +22,7 @@ const Menu = () => {
         <FeatherIcon
           name="user"
           color="#34cb79"
-          onPress={() => navigation.navigate('Profile')}
+          onPress={() => navigation.navigate('ProfileStackScreen')}
           size={40}
           iconStyle={{margin: 100}}
         />

@@ -27,7 +27,7 @@ export default function Login({navigation}) {
   };
 
   const handleLoginPress = () => {
-    navigation.navigate('Home');
+    navigation.navigate('TabNav');
   };
 
   return (

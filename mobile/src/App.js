@@ -8,7 +8,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 //import Icon from 'react-native-vector-icons/FontAwesome';
 //import MapIcon from 'react-native-vector-icons/FontAwesome';
-import GraphIcon from 'react-native-vector-icons/Entypo';
+import MaterialComunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import FeatherIcon from 'react-native-vector-icons/Feather'; //map  //search //camera //user
 
 import {NavigationContainer} from '@react-navigation/native';
@@ -92,6 +92,17 @@ export default function App() {
             },
             headerTintColor: '#fff',
           }}></Stack.Screen>
+        <Stack.Screen
+          name="TabNav"
+          component={TabNav}
+          options={{
+            headerTitle: props => MenuFunction(),
+            headerStyle: {
+              backgroundColor: '#f5eef5',
+            },
+            headerTintColor: '#fff5eef5f',
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -105,17 +116,19 @@ function TabNav() {
 
           switch (route.name) {
             case 'Home':
-              iconName = 'home';
+              iconName = 'map-marker-radius';
               break;
             case 'Login':
-              iconName = 'award';
+              iconName = 'lightbulb-on-outline';
               break;
             default:
               iconName = 'circle';
               break;
           }
           // You can return any component that you like here
-          return <FeatherIcon name={iconName} size={28} color={color} />;
+          return (
+            <MaterialComunityIcons name={iconName} size={28} color={color} />
+          );
         },
       })}
       tabBarOptions={{
@@ -136,7 +149,7 @@ function TabNav() {
                 start={{x: 0, y: 1}}
                 end={{x: 0, y: 0}}
                 colors={['#08DDB4', '#34bc79']}>
-                <GraphIcon name="camera" size={22} color="#FFF" />
+                <FeatherIcon name="award" size={28} color="#FFF" />
               </LinearGradient>
             </View>
           ),
@@ -234,18 +247,19 @@ function ProfileStackScreen() {
         name="Profile"
         component={Profile}
         options={{
-          headerTitle: props => MenuFunction(),
+          title: 'Profile',
           headerStyle: {
-            backgroundColor: '#f5eef5',
-            shadowColor: '#f5eef5',
+            backgroundColor: '#34cb79',
+            shadowColor: '#34cb79',
             shadowOffset: {
               width: 0,
               height: 0,
             },
             shadowOpacity: 0,
-            shadowRadius: 2,
+            shadowRadius: 0,
             elevation: 0,
           },
+          headerTintColor: '#fff',
         }}
       />
     </ProfileStack.Navigator>
@@ -302,6 +316,9 @@ function HomeStackScreen() {
           },
         }}
       />
+      <HomeStack.Screen
+        name="ProfileStackScreen"
+        component={ProfileStackScreen}></HomeStack.Screen>
     </HomeStack.Navigator>
   );
 }
