@@ -3,10 +3,9 @@ import {Image} from 'react-native';
 
 export const Container = styled.KeyboardAvoidingView`
   flex: 1;
-  align-items: center;
+  padding: 20px;
   justify-content: center;
-  background-color: #34cb79;
-  justify-content: flex-end;
+  background-color: #fff;
 `;
 
 export const FormContainer = styled.View`
@@ -44,8 +43,8 @@ export const ReadyButton = styled.TouchableOpacity`
 export const ButtonText = styled.Text`
   color: #fff;
   text-align: center;
-  font-size: 16px;
-  font-weight: 900;
+  font-size: 17px;
+  font-weight: bold;
 `;
 
 export const StyledText = styled.Text`
@@ -66,7 +65,7 @@ export const StyledPasswordText = styled.Text`
 `;
 
 export const StyledGreenText = styled.Text`
-  font-weight: 500;
+  font-weight: bold;
   font-size: 18px;
   color: #34cb79;
   align-self: center;
@@ -79,7 +78,7 @@ export const InputContainer = styled.View`
 
 export const CreateAccountContainer = styled.View`
   justify-content: flex-end;
-  margin-top: 20%;
+  margin-top: 100px;
 `;
 
 export const ButtonsContainer = styled.View`

@@ -39,8 +39,8 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-          name="WelcomeStackScreen"
-          component={WelcomeStackScreen}
+          name="Welcome"
+          component={Welcome}
           options={{
             title: '',
             headerStyle: {
@@ -60,7 +60,7 @@ export default function App() {
           name="Login"
           component={Login}
           options={{
-            title: '',
+            title: 'Login',
             headerStyle: {
               backgroundColor: '#34cb79',
               shadowColor: '#34cb79',
@@ -78,7 +78,7 @@ export default function App() {
           name="CreateAccount"
           component={CreateAccount}
           options={{
-            title: '',
+            title: 'Criar conta',
             headerStyle: {
               backgroundColor: '#34cb79',
               shadowColor: '#34cb79',
