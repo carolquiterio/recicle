@@ -39,8 +39,8 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-          name="Welcome"
-          component={Welcome}
+          name="WelcomeStackScreen"
+          component={WelcomeStackScreen}
           options={{
             title: '',
             headerStyle: {
