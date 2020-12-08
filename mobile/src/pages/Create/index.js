@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 
 import {firebase} from '../../firebase/config';
+import {useNavigation} from '@react-navigation/native';
 
 import {KeyBoardAvoidingView} from 'react-native';
 import {

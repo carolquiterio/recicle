@@ -37,57 +37,116 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Tab.Navigator
-        screenOptions={({route}) => ({
-          tabBarIcon: ({color, size}) => {
-            let iconName;
-
-            switch (route.name) {
-              case 'Home':
-                iconName = 'home';
-                break;
-              case 'Login':
-                iconName = 'award';
-                break;
-              default:
-                iconName = 'circle';
-                break;
-            }
-            // You can return any component that you like here
-            return <FeatherIcon name={iconName} size={28} color={color} />;
-          },
-        })}
-        tabBarOptions={{
-          activeTintColor: '#34CB79',
-          inactiveTintColor: 'gray',
-          showLabel: false,
-        }}>
-        <Tab.Screen name="Login" component={DetailsStackScreen} />
-
-        <Tab.Screen
-          name="Camera"
-          component={TipsStackScreen}
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Welcome"
+          component={Welcome}
           options={{
-            tabBarIcon: ({tintColor}) => (
-              <View>
-                <LinearGradient
-                  style={styles.iconTabRound}
-                  start={{x: 0, y: 1}}
-                  end={{x: 0, y: 0}}
-                  colors={['#08DDB4', '#34bc79']}>
-                  <GraphIcon name="camera" size={22} color="#FFF" />
-                </LinearGradient>
-              </View>
-            ),
-          }}
-        />
-
-        <Tab.Screen name="Home" component={HomeStackScreen} />
-      </Tab.Navigator>
+            title: '',
+            headerStyle: {
+              backgroundColor: '#34cb79',
+              shadowColor: '#34cb79',
+              shadowOffset: {
+                width: 0,
+                height: 0,
+              },
+              shadowOpacity: 0,
+              shadowRadius: 0,
+              elevation: 0,
+            },
+            headerTintColor: '#fff',
+          }}></Stack.Screen>
+        <Stack.Screen
+          name="Login"
+          component={Login}
+          options={{
+            title: '',
+            headerStyle: {
+              backgroundColor: '#34cb79',
+              shadowColor: '#34cb79',
+              shadowOffset: {
+                width: 0,
+                height: 0,
+              },
+              shadowOpacity: 0,
+              shadowRadius: 0,
+              elevation: 0,
+            },
+            headerTintColor: '#fff',
+          }}></Stack.Screen>
+        <Stack.Screen
+          name="CreateAccount"
+          component={CreateAccount}
+          options={{
+            title: '',
+            headerStyle: {
+              backgroundColor: '#34cb79',
+              shadowColor: '#34cb79',
+              shadowOffset: {
+                width: 0,
+                height: 0,
+              },
+              shadowOpacity: 0,
+              shadowRadius: 0,
+              elevation: 0,
+            },
+            headerTintColor: '#fff',
+          }}></Stack.Screen>
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }
+function TabNav() {
+  return (
+    <Tab.Navigator
+      screenOptions={({route}) => ({
+        tabBarIcon: ({color, size}) => {
+          let iconName;
 
+          switch (route.name) {
+            case 'Home':
+              iconName = 'home';
+              break;
+            case 'Login':
+              iconName = 'award';
+              break;
+            default:
+              iconName = 'circle';
+              break;
+          }
+          // You can return any component that you like here
+          return <FeatherIcon name={iconName} size={28} color={color} />;
+        },
+      })}
+      tabBarOptions={{
+        activeTintColor: '#34CB79',
+        inactiveTintColor: 'gray',
+        showLabel: false,
+      }}>
+      <Tab.Screen name="Login" component={DetailsStackScreen} />
+
+      <Tab.Screen
+        name="Camera"
+        component={TipsStackScreen}
+        options={{
+          tabBarIcon: ({tintColor}) => (
+            <View>
+              <LinearGradient
+                style={styles.iconTabRound}
+                start={{x: 0, y: 1}}
+                end={{x: 0, y: 0}}
+                colors={['#08DDB4', '#34bc79']}>
+                <GraphIcon name="camera" size={22} color="#FFF" />
+              </LinearGradient>
+            </View>
+          ),
+        }}
+      />
+
+      <Tab.Screen name="Home" component={HomeStackScreen} />
+    </Tab.Navigator>
+  );
+}
 const LoginStack = createStackNavigator();
 
 function LoginStackScreen() {
@@ -252,12 +311,12 @@ const WelcomeStack = createStackNavigator();
 function WelcomeStackScreen() {
   return (
     <WelcomeStack.Navigator screenOptions={{headerShown: false}}>
-      <WelcomeStack.Screen name="Welcome" component={Welcome} />
+      <WelcomeStack.Screen name="Welcome" component={WelcomeStackScreen} />
+      <WelcomeStack.Screen name="CreateAccount" component={CreateAccount} />
       <WelcomeStack.Screen
         name="LoginStackScreen"
         component={LoginStackScreen}
       />
-      <WelcomeStack.Screen name="CreateAccount" component={CreateAccount} />
     </WelcomeStack.Navigator>
   );
 }
