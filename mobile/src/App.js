@@ -24,6 +24,8 @@ import Profile from './pages/Profile';
 import Welcome from './pages/Welcome';
 import Details from './pages/Details';
 import Tips from './pages/Tips';
+import CreateNewCollect from './pages/CreateNewCollect';
+import CreateNewTip from './pages/CreateNewTip';
 
 import Menu from './components/Menu';
 import TabBarMidleButton from './components/TabBarMidleButton';
@@ -118,7 +120,7 @@ function TabNav() {
             case 'Home':
               iconName = 'map-marker-radius';
               break;
-            case 'Login':
+            case 'Collect':
               iconName = 'lightbulb-on-outline';
               break;
             default:
@@ -136,7 +138,7 @@ function TabNav() {
         inactiveTintColor: 'gray',
         showLabel: false,
       }}>
-      <Tab.Screen name="Login" component={DetailsStackScreen} />
+      <Tab.Screen name="Collect" component={Collect} />
 
       <Tab.Screen
         name="Camera"
@@ -247,7 +249,7 @@ function ProfileStackScreen() {
         name="Profile"
         component={Profile}
         options={{
-          title: 'Profile',
+          headerTitle: props => MenuFunction(),
           headerStyle: {
             backgroundColor: '#34cb79',
             shadowColor: '#34cb79',
