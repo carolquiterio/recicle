@@ -103,6 +103,14 @@ export default function App() {
             headerTitle: props => MenuFunction(),
             headerStyle: {
               backgroundColor: '#f5eef5',
+              shadowColor: '#f5eef5',
+              shadowOffset: {
+                width: 0,
+                height: 0,
+              },
+              shadowOpacity: 0,
+              shadowRadius: 0,
+              elevation: 0,
             },
             headerTintColor: '#f5eef5',
           }}
@@ -288,6 +296,9 @@ function ProfileStackScreen() {
           headerTintColor: '#fff',
         }}
       />
+      <ProfileStack.Screen
+        name="Details"
+        component={Details}></ProfileStack.Screen>
     </ProfileStack.Navigator>
   );
 }
@@ -345,6 +356,9 @@ function HomeStackScreen() {
       <HomeStack.Screen
         name="ProfileStackScreen"
         component={ProfileStackScreen}></HomeStack.Screen>
+      <HomeStack.Screen
+        name="CreateNewCollect"
+        component={CreateNewCollect}></HomeStack.Screen>
     </HomeStack.Navigator>
   );
 }
@@ -436,6 +450,9 @@ function TipsStackScreen() {
           },
         }}
       />
+      <TipsStack.Screen
+        name="TipsDetails"
+        component={Details}></TipsStack.Screen>
     </TipsStack.Navigator>
   );
 }

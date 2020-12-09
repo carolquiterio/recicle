@@ -42,7 +42,6 @@ export default function Login({navigation}) {
           onSubmitEditing={() => {
             this.passwordTextInput.focus();
           }}
-          onChangeText={text => setEmail(text)}
           value={email}
           style={shadowStyle}
         />
@@ -54,7 +53,7 @@ export default function Login({navigation}) {
           placeholderTextColor="gray"
           //ref={(input) => { this.passwordTextInput = input; }}
           //returnKeyType = { "next" }
-          onChangeText={text => setPasssword(text)}
+
           value={password}
           style={shadowStyle}
         />

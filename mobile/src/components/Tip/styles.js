@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import {Image} from 'react-native';
 
-export const Container = styled.View`
+export const Container = styled.TouchableOpacity`
   background-color: #fff;
   width: 170px;
   height: 170px;
@@ -15,8 +15,9 @@ export const Row = styled.View`
   padding: 2px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  justify-content: flex-end;
+  justify-content: center;
   width: 170px;
+  height: 28px;
 `;
 
 export const Title = styled.Text`

@@ -47,3 +47,16 @@ export const NavItem = styled.View`
 export const NavText = styled.Text`
   margin-left: 10px;
 `;
+
+export const StyledRowContainer = styled.View`
+  flex-direction: row;
+  margin-right: 250px;
+  margin-bottom: 16px;
+`;
+
+export const StyledGoBack = styled.Text`
+  font-size: 22px;
+  color: #34cb79;
+  font-family: 'Ubuntu-Regular';
+  letter-spacing: -0.333333px;
+`;

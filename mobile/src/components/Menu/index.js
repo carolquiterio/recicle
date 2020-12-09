@@ -34,7 +34,7 @@ const Menu = () => {
         <FeatherIcon
           name="plus"
           color="#34cb79"
-          onPress={() => navigation.navigate('Create')}
+          onPress={() => navigation.navigate('CreateNewCollect')}
           size={40}
         />
       </IconContainerMenu>
