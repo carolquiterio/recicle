@@ -26,6 +26,7 @@ import Details from './pages/Details';
 import Tips from './pages/Tips';
 import CreateNewCollect from './pages/CreateNewCollect';
 import CreateNewTip from './pages/CreateNewTip';
+import Map from './pages/Map';
 
 import Menu from './components/Menu';
 import TabBarMidleButton from './components/TabBarMidleButton';
@@ -117,10 +118,10 @@ function TabNav() {
           let iconName;
 
           switch (route.name) {
-            case 'Home':
+            case 'Map':
               iconName = 'map-marker-radius';
               break;
-            case 'Collect':
+            case 'TipsStackScreen':
               iconName = 'lightbulb-on-outline';
               break;
             default:
@@ -141,8 +142,8 @@ function TabNav() {
       <Tab.Screen name="TipsStackScreen" component={TipsStackScreen} />
 
       <Tab.Screen
-        name="Login"
-        component={Login}
+        name="HomeStackScreen"
+        component={HomeStackScreen}
         options={{
           tabBarIcon: ({tintColor}) => (
             <View>
@@ -158,7 +159,7 @@ function TabNav() {
         }}
       />
 
-      <Tab.Screen name="Home" component={HomeStackScreen} />
+      <Tab.Screen name="Map" component={Map} />
     </Tab.Navigator>
   );
 }

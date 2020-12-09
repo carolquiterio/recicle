@@ -1,10 +1,21 @@
 import React from 'react';
-import {View} from 'react-native';
+import {Image} from 'react-native';
 
-import {Container} from './styles';
+import {Container, Title, Row, Img} from './styles';
 
-const Tip = () => {
-  return <Container />;
+const Tip = props => {
+  return (
+    <Container>
+      <Img
+        source={{
+          uri: props.img,
+        }}
+      />
+      <Row>
+        <Title>{props.title}</Title>
+      </Row>
+    </Container>
+  );
 };
 
 export default Tip;

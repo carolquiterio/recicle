@@ -41,11 +41,11 @@ const Grafic = () => {
           }}
           data={data}
           svg={{
-            fill: '#08DDB4',
+            fill: '#34cb79',
             strokeWidth: 8,
             strokeLinejoin: 'round',
             //strokeLinecap: 'round',
-            stroke: '#08DDB4',
+            stroke: '#34cb79',
           }}
           contentInset={contentInset}
           spacingInner={0.7}></BarChart>
