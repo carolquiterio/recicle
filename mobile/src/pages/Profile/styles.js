@@ -33,13 +33,13 @@ export const ThreeContainer = styled.View`
 export const NumberOfThreesText = styled.Text`
   font-size: 50px;
   color: #ffffff;
-  font-weight: 900;
+  font-weight: bold;
 `;
 
 export const NavItem = styled.View`
   flex-direction: row;
   align-items: center;
-  padding: 5px ;
+  padding: 5px;
   margin-left: 15px;
   margin-bottom: 2px;
 `;

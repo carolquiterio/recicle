@@ -99,11 +99,12 @@ export default function App() {
           name="TabNav"
           component={TabNav}
           options={{
+            headerLeft: null,
             headerTitle: props => MenuFunction(),
             headerStyle: {
               backgroundColor: '#f5eef5',
             },
-            headerTintColor: '#fff5eef5f',
+            headerTintColor: '#f5eef5',
           }}
         />
       </Stack.Navigator>
@@ -118,7 +119,7 @@ function TabNav() {
           let iconName;
 
           switch (route.name) {
-            case 'Map':
+            case 'MapStackScreen':
               iconName = 'map-marker-radius';
               break;
             case 'TipsStackScreen':
@@ -159,8 +160,19 @@ function TabNav() {
         }}
       />
 
-      <Tab.Screen name="Map" component={Map} />
+      <Tab.Screen name="MapStackScreen" component={MapStackScreen} />
     </Tab.Navigator>
+  );
+}
+
+const MapStack = createStackNavigator();
+
+function MapStackScreen() {
+  return (
+    <MapStack.Navigator>
+      <MapStack.Screen name="Map" component={Map} />
+      <MapStack.Screen name="Collect" component={Collect} />
+    </MapStack.Navigator>
   );
 }
 const LoginStack = createStackNavigator();

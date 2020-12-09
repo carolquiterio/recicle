@@ -11,7 +11,6 @@ import {
 } from './styles';
 
 import LogoImg from '../../assets/logoo.png';
-//import LogoWhite from '../../assets/logoBranco.png';
 
 const Menu = () => {
   const navigation = useNavigation();

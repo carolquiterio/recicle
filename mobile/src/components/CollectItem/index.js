@@ -8,7 +8,7 @@ import emailIcon from '../../assets/icons/mail-white.png';
 
 function CollectItem(props) {
   function handleWhatsPress() {
-    Linking.openURL('sms:188');
+    Linking.openURL('sms:789456123');
   }
 
   function handleEmailPress() {

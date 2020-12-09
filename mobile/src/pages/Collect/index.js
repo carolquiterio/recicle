@@ -9,7 +9,7 @@ export default function Collect() {
       <StyledText>Collect</StyledText>
 
       <CollectItem
-        collectName="ONG Coleta"
+        collectName="Coleta Reciclagem"
         description="Somos uma ONG que recebe materiais e faz sua redistribuição e venda para outros lugares, usando todo o lucro para ajudar animais de rua"
         items="Baterias, pilhas, metais etc"
         place="Rua Paula Bueno 877 - Taquaral - Campinas"

@@ -11,7 +11,7 @@ export default function Map({navigation}) {
   //const navigation = useNavigation();
 
   const handleNavigateToCollectItem = () => {
-    navigation.navigate('CollectItem');
+    navigation.navigate('Collect');
   };
 
   return (
