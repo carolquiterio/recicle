@@ -3,14 +3,16 @@ import {ScrollView, View} from 'react-native';
 
 import Grafic from '../../components/Grafic';
 
-import {StyledContainer, Title} from './styles';
+import {StyledContainer, Title, GraficContainer} from './styles';
 
 export default function Home(props) {
   return (
     <View>
       <StyledContainer>
         <Title>Seu progresso</Title>
-        <Grafic />
+        <GraficContainer>
+          <Grafic />
+        </GraficContainer>
       </StyledContainer>
     </View>
   );

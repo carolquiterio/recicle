@@ -22,3 +22,10 @@ export const Title = styled.Text`
 
   color: #363636;
 `;
+
+export const GraficContainer = styled.View`
+  padding-bottom: 10px;
+  background-color: #fff;
+`;
+
+export const

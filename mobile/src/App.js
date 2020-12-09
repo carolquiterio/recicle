@@ -171,10 +171,21 @@ function MapStackScreen() {
   return (
     <MapStack.Navigator>
       <MapStack.Screen name="Map" component={Map} />
-      <MapStack.Screen name="Collect" component={Collect} />
+      <MapStack.Screen name="Collect" component={CollecttStackScreen} />
     </MapStack.Navigator>
   );
 }
+
+const CollcetStack = createStackNavigator();
+function CollecttStackScreen() {
+  return (
+    <CollcetStack.Navigator screenOptions={{headerShown: false}}>
+      <CollcetStack.Screen name="Map" component={Map} />
+      <CollcetStack.Screen name="Collect" component={Collect} />
+    </CollcetStack.Navigator>
+  );
+}
+
 const LoginStack = createStackNavigator();
 
 function LoginStackScreen() {
