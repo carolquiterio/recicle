@@ -138,11 +138,11 @@ function TabNav() {
         inactiveTintColor: 'gray',
         showLabel: false,
       }}>
-      <Tab.Screen name="Collect" component={Collect} />
+      <Tab.Screen name="TipsStackScreen" component={TipsStackScreen} />
 
       <Tab.Screen
-        name="Camera"
-        component={TipsStackScreen}
+        name="Login"
+        component={Login}
         options={{
           tabBarIcon: ({tintColor}) => (
             <View>
