@@ -37,10 +37,11 @@ The project was developed using the following technologies
 - The layout is avaible on **[Figma](https://www.figma.com/file/htfz6p9TWQs0LnhVRByEqp/Recicle?node-id=21%3A26)**;
 
 <h1 align="center">
-    <img alt="Home" src=".github/collect.png" width="300px">
-    <img alt="Tips" src=".github/progress.png" width="300px"> 
+    <img alt="Home" src=".github/camera.png" width="300px">
+    <img alt="Tips" src=".github/camera-1.png" width="300px"> 
     <br>
-    <img alt="Collect" src=".github/tips.png" width="300px">
+    <img alt="Collect" src=".github/avaliacao foto.png" width="300px">
+    <img alt="Collect" src=".github/collect.png" width="300px">
 </h1>
 
 <a id="como-usar"></a>
